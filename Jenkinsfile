@@ -17,7 +17,6 @@ pipeline {
       agent any
       steps {
         sh 'docker build -t image_new .'
-		sh 'docker run -it image_new'
       }
     }
   }
