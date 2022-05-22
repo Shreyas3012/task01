@@ -3,16 +3,16 @@
 pipeline {
   agent none
   stages {
-    stage('Start') {
-      agent {
-        docker {
-          image 'image_new'
-        }
-      }
-      steps {
-        sh 'echo Build running'
-      }
-    }
+    // stage('Start') {
+      // agent {
+        // docker {
+          // image 'image_new'
+        // }
+      // }
+      // steps {
+        // sh 'echo Build running'
+      // }
+    // }
     stage('Docker Build') {
       agent any
       steps {
