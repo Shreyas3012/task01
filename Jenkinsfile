@@ -6,7 +6,7 @@ pipeline {
     stage('Start') {
       agent {
         docker {
-          image 'image1'
+          image 'image_new'
         }
       }
       steps {
@@ -16,7 +16,8 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t image1 .'
+        sh 'docker build -t image_new .'
+		sh 'docker run -it image_new /bin/bash'
       }
     }
   }
