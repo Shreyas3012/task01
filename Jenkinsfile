@@ -3,11 +3,14 @@
 pipeline {
   agent none
   stages {
-    stage('Maven Install') {
+    stage('Start') {
       agent {
         docker {
           image 'image1'
         }
+      }
+      steps {
+        sh 'echo Build running'
       }
     }
     stage('Docker Build') {
