@@ -11,17 +11,18 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("image1")
     }
 
-    // stage('Test image') {
-        // /* Ideally, we would run a test framework against our image.
-         // * For this example, we're using a Volkswagen-type approach ;-) */
+    stage('Test image') {
+        /* Ideally, we would run a test framework against our image.
+         * For this example, we're using a Volkswagen-type approach ;-) */
+		 sh docker run -it image1 /bin/bash
 
         // app.inside {
             // sh 'echo "Tests passed"'
         // }
-    // }
+    }
 
     // stage('Push image') {
         // /* Finally, we'll push the image with two tags:
